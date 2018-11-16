@@ -32,7 +32,7 @@ class AboutMe extends Component {
                         <br />
 
 
-                        <p id="textColor">Now I'm building webpages and learning more then ever about integrating differnet technologies to make meaningful web/phone applications.</p>
+                        <p id="textColor">Now I'm building webpages and learning more than ever about integrating different technologies to make meaningful web/phone applications.</p>
                         <br />
                         <p id="center">Thanks for reading!</p>
                         </div>
