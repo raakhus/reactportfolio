@@ -18,10 +18,10 @@ class Contact extends Component {
       email: '',
       phone:'',
       message:'',
-      formErrors: {email: '', password: ''},
       emailValid: false,
+      phoneValid: false,
       formValid: false,
-      phoneValid: false
+      formErrors: {email: '', phone: ''}
     }
   }
   
@@ -44,14 +44,15 @@ class Contact extends Component {
         );
     
   };
-  handleUserInput = (e) => {
-    const { name, value } = e.target;
-    this.setState({[name]: value},
-                  () => { this.validateField(name, value) }
-                  );
-  }
 
-  validateField(fieldName, value) {
+  handleUserInput = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    this.setState({[name]: value}, 
+                  () => { this.validateField(name, value) });
+  };
+
+  validateField = (fieldName, value) => {
     let fieldValidationErrors = this.state.formErrors;
     let emailValid = this.state.emailValid;
     let phoneValid = this.state.phoneValid;
@@ -71,14 +72,15 @@ class Contact extends Component {
     this.setState({formErrors: fieldValidationErrors,
                     emailValid: emailValid,
                    phoneValid: phoneValid,
-                  }, this.validateForm);
+                  }, () =>{this.validateForm()});
+               
   }
 
-  validateForm() {
-    this.setState({formValid: this.state.emailValid && this.state.passwordValid});
+  validateForm = () => {
+    this.setState({formValid: this.state.emailValid && this.state.phoneValid});
   }
 
-  errorClass(error) {
+  errorClass = (error) => {
     return(error.length === 0 ? '' : 'has-error');
   }
   render() {
@@ -102,7 +104,7 @@ class Contact extends Component {
               value={this.state.name}
               />
             </FormGroup>
-            <FormGroup className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
+            <FormGroup className={`form-group ${this.errorClass(this.state.formErrors.phone)}`}>
               <Label for="phone">Phone</Label>
               <Input type="text" name="phone" id="phoneInput" placeholder="Phone Number" 
               value={this.state.phone}
@@ -118,8 +120,9 @@ class Contact extends Component {
             </FormGroup>
            
             <Button
+                className="btn btn-success"
                 disabled={!this.state.formValid}
-                onClick={this.handleFormSubmit}>Submit</Button>
+                onClick={this.handleFormSubmit.bind(this)}>Submit</Button>
             
           </Form>
           </div>
