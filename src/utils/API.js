@@ -1,20 +1,20 @@
 import axios from "axios";
-
+const url = "https://randyaakhusapi.herokuapp.com/api/contacts1"
 export default {
   // Gets all contacts
   getContacts: function() {
-    return axios.get("/api/contacts1");
+    return axios.get(url);
   },
   // Gets the contact with the given id
   getContact: function(id) {
-    return axios.get("/api/contacts1/" + id);
+    return axios.get(url + id);
   },
   // Deletes the contact with the given id
   deleteContact: function(id) {
-    return axios.delete("/api/contacts1/" + id);
+    return axios.delete(url + id);
   },
   // Saves a contact to the database
   saveContact: function(contactData) {
-    return axios.post("/api/contacts1", contactData);
+    return axios.post(url, contactData);
   }
 };
