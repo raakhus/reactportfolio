@@ -38,7 +38,7 @@ export default class Header extends React.Component {
                 <NavLink className="font-weight-bold" href="/">Home</NavLink>
               </NavItem>
               <NavItem className="d-flex align-items-center">
-                <NavLink className="font-weight-bold" href="/contact">Contact</NavLink>
+                <NavLink className="font-weight-bold" href="/contact">Contact Me</NavLink>
               </NavItem>
               <NavItem className="d-flex align-items-center">
                 <NavLink className="font-weight-bold" href="/portfolio">Portfolio</NavLink>

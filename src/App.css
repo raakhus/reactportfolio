@@ -63,3 +63,8 @@ text-indent: 20px;
   width: 100%;
   height: auto;
 }
+.contactimages{
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
