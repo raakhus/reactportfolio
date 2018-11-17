@@ -1,6 +1,6 @@
 import axios from "axios";
-// const url = "https://randyaakhusapi.herokuapp.com/api/contacts1"
-const url = 'http://localhost:3001/api/contacts1'
+const url = "https://randyaakhusapi.herokuapp.com/api/contacts1"
+// const url = 'http://localhost:3001/api/contacts1'
 export default {
   // Gets all contacts
   getContacts: function() {
