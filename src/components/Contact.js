@@ -89,7 +89,7 @@ class Contact extends Component {
         <div className="col-sm-8 text-center contact">
         
           <Form  className="text-white">
-            <FormGroup>
+            <FormGroup className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
               <Label for="Email">Email</Label>
               <Input type="email" name="email" id="Email" placeholder="Email"
               value={this.state.email}
@@ -102,7 +102,7 @@ class Contact extends Component {
               value={this.state.name}
               />
             </FormGroup>
-            <FormGroup>
+            <FormGroup className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
               <Label for="phone">Phone</Label>
               <Input type="text" name="phone" id="phoneInput" placeholder="Phone Number" 
               value={this.state.phone}
@@ -118,6 +118,7 @@ class Contact extends Component {
             </FormGroup>
            
             <Button
+                disabled={!this.state.formValid}
                 onClick={this.handleFormSubmit}>Submit</Button>
             
           </Form>
