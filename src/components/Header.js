@@ -33,7 +33,7 @@ export default class Header extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           
           <Collapse isOpen={this.state.isOpen} navbar >
-            <Nav className="mrx-auto" navbar pullright>
+            <Nav className="mrx-auto" navbar>
               <NavItem className="d-flex align-items-center">
                 <NavLink className="font-weight-bold" href="/">Home</NavLink>
               </NavItem>

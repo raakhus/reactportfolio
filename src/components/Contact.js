@@ -34,13 +34,14 @@ class Contact extends Component {
         phone: this.state.phone,
         message: this.state.message,
       })
-        .then(res => this.setState({
+        .then(res => console.log(res), this.setState({
           name:'',
           email:'',
           phone:'',
           message:''
         }))
-        .catch(err => console.log(err));
+        .catch(err => console.log(err)
+        );
     
   };
   handleUserInput = (e) => {
