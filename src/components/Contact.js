@@ -100,6 +100,7 @@ class Contact extends Component {
           <a href="https://github.com/raakhus" target="_blanck">
           <img className="contactimages" src={github} alt="github"/> 
           </a>
+          <a href="randyaakhus@gmail.com">gmail</a>
           </div>
           <div/> 
           </div>

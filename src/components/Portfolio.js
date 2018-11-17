@@ -6,10 +6,10 @@ import {
     CarouselIndicators,
     CarouselCaption
 } from 'reactstrap';
-import image1 from "./assets/images/catalina.jpg"
-import image2 from "./assets/images/costrice.jpg"
-import image3 from "./assets/images/prague.jpg"
-import image4 from "./assets/images/sunset.jpg"
+import image1 from "./assets/images/slowmoburger.gif"
+import image2 from "./assets/images/halo.jpg"
+import image3 from "./assets/images/South_park.png"
+import image4 from "./assets/images/nyt1.jpg"
 
 const items = [
     {
@@ -97,7 +97,7 @@ const items = [
           <div className="container">
           <div className="row">
           <div className="col-sm-2"></div>
-          <div className="col-sm-8">
+          <div className="col-sm-8 contact outline">
         <Carousel
           activeIndex={activeIndex}
           next={this.next}

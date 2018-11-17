@@ -68,3 +68,10 @@ text-indent: 20px;
   height: 100px;
   margin: 10px;
 }
+.outline{
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
