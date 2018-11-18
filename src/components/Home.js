@@ -15,7 +15,7 @@ class AboutMe extends Component {
                         <h2 id="aboutme">About Me</h2>
                         <br />
                         <p id="textColor">
-                        I grew up in Bakersfield, California. When I was young, I had extreme flexibility in my joints (still do
+                        My name is Randy Aakhus. I grew up in Bakersfield, California. When I was young, I had extreme flexibility in my joints (still do
                             for some joints). My overprotective Mother decided I should not be allowed to play contact sports. For the
                         better part of my young, life I developed my skills at swimming and learning.</p>
                         <br />
