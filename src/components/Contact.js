@@ -22,9 +22,8 @@ class Contact extends Component {
       phone: '',
       message: '',
       emailValid: false,
-      phoneValid: false,
       formValid: false,
-      formErrors: { email: '', phone: '' }
+      formErrors: { email: ''}
     }
   }
 
@@ -58,30 +57,30 @@ class Contact extends Component {
   validateField = (fieldName, value) => {
     let fieldValidationErrors = this.state.formErrors;
     let emailValid = this.state.emailValid;
-    let phoneValid = this.state.phoneValid;
+    // let phoneValid = this.state.phoneValid;
 
     switch (fieldName) {
       case 'email':
         emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
         fieldValidationErrors.email = emailValid ? '' : ' is invalid';
         break;
-      case 'phone':
-        phoneValid = value.length === 10;
-        fieldValidationErrors.phone = phoneValid ? '' : ' is too short';
-        break;
+      // case 'phone':
+      //   phoneValid = value.length === 10;
+      //   fieldValidationErrors.phone = phoneValid ? '' : ' is too short';
+      //   break;
       default:
         break;
     }
     this.setState({
       formErrors: fieldValidationErrors,
       emailValid: emailValid,
-      phoneValid: phoneValid,
+      // phoneValid: phoneValid,
     }, () => { this.validateForm() });
 
   }
 
   validateForm = () => {
-    this.setState({ formValid: this.state.emailValid && this.state.phoneValid });
+    this.setState({ formValid: this.state.emailValid});
   }
 
   errorClass = (error) => {
@@ -100,7 +99,6 @@ class Contact extends Component {
           <a href="https://github.com/raakhus" target="_blanck">
           <img className="contactimages" src={github} alt="github"/> 
           </a>
-          <a href="randyaakhus@gmail.com">gmail</a>
           </div>
           <div/> 
           </div>
@@ -124,7 +122,7 @@ class Contact extends Component {
                   value={this.state.name}
                 />
               </FormGroup>
-              <FormGroup className={`form-group ${this.errorClass(this.state.formErrors.phone)}`}>
+              <FormGroup>
                 <Label for="phone">Phone</Label>
                 <Input type="text" name="phone" id="phoneInput" placeholder="Phone Number"
                   value={this.state.phone}
