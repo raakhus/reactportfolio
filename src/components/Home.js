@@ -27,8 +27,8 @@ class AboutMe extends Component {
                             want to be a Lifeguard or any other type of public saftey employee. After the summer, I talked to my brother
                         and we started our own corporation called ACTS Services.</p>
                         <br />
-                        <p id="textColor">The service we provided was to install solar panels on the roof of houses. Some time passed and I realized this
-                        daily grind wasn't for me.</p>
+                        <p id="textColor">The service we provided was to install solar panels on the roof of houses. Doing this helped me realized I was looking
+                        for something with more technical and challening problems for me to solve.</p>
                         <br />
 
 

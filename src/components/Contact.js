@@ -5,6 +5,7 @@ import {
   FormGroup,
   Label,
   Input,
+  // Alert,
 } from 'reactstrap';
 import API from "../utils/API";
 import github from "./assets/images/github.png";
@@ -26,10 +27,11 @@ class Contact extends Component {
       formErrors: { email: ''}
     }
   }
-
+  success = () => {
+    this.setState({ visible: false });
+  }
   handleFormSubmit = event => {
     event.preventDefault();
-    console.log(this.state)
     API.saveContact({
       name: this.state.name,
       email: this.state.email,
@@ -51,7 +53,7 @@ class Contact extends Component {
     const name = e.target.name;
     const value = e.target.value;
     this.setState({ [name]: value },
-      () => { this.validateField(name, value) });
+      () => {this.validateField(name, value)});
   };
 
   validateField = (fieldName, value) => {
@@ -75,7 +77,7 @@ class Contact extends Component {
       formErrors: fieldValidationErrors,
       emailValid: emailValid,
       // phoneValid: phoneValid,
-    }, () => { this.validateForm() });
+    }, () => {this.validateForm()});
 
   }
 
@@ -136,17 +138,17 @@ class Contact extends Component {
                   onChange={this.handleUserInput}
                 />
               </FormGroup>
-
               <Button
                 className="btn btn-success"
                 disabled={!this.state.formValid}
                 onClick={this.handleFormSubmit.bind(this)}>Submit</Button>
-
             </Form>
           </div>
           <div className="col-sm-2" />
         </div>
       </div>
+    
+      
 
     );
   }
